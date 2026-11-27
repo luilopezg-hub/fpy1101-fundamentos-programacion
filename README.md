@@ -151,4 +151,12 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
+
+
+# JUSTIFICACIÓN DE DISEÑO
+# 1) buscar_vehiculo retorna -1 si no encuentra el modelo, porque -1 nunca es una posición válida
+#    de la lista; así main y eliminar_vehiculo deciden qué mensaje mostrar según el resultado.
+# 2) La lista se pasa como parámetro a cada función en vez de usar una variable global, para que
+#    cada función dependa solo de lo que recibe y sea más fácil de probar y reutilizar.
+# 3) Las validaciones solo devuelven True/False y los errores se muestran en agregar_vehiculo,
+#    así cada función tiene una única responsabilidad.
